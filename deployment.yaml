@@ -1,0 +1,9 @@
+---
+spec:
+  template:
+    spec:
+      containers:
+        - name: container-name
+          image: ghcr.io/username/package:latest
+      imagePullSecrets:
+        - name: github-container-registry
