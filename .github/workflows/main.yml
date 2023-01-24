@@ -69,7 +69,7 @@ jobs:
         uses: azure/k8s-set-context@v2
         with:
           method: service-account
-          k8s-url: http://tassk3s.duckdns.org:8000
+          k8s-url: http://tassk3s.duckdns.org:8031
           k8s-secret: ${{ secrets.KUBERNETES_SECRET }}
 
       - name: Checkout source code
