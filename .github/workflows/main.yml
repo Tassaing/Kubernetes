@@ -55,7 +55,7 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          tags: my-image-name:t10
+          tags: tassaing/my-image-name:t10
           build-args: |
               "NPM_TOKEN=${{ secrets.TOKEN }}"
           push: true
