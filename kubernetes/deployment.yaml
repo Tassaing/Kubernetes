@@ -4,7 +4,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
  name: www-deployment
- namespace: production
+ namespace: default
 spec:
  nodeSelector:
   name: centos8bis
