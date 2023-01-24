@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install dependencies with Composer
-        uses: ramsey/composer-install@v2
+        uses: ramsey/composer-install@v3
 
       - name: Execute database migrations
         run: bin/console doctrine:migrations:migrate --no-interaction
