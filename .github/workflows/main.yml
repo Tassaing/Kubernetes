@@ -71,4 +71,18 @@ jobs:
           method: service-account
           k8s-url: https://tassk3s.duckdns.org:8080
           k8s-secret: ${{ secrets.KUBERNETES_SECRET }}
+
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Deploy to the Kubernetes cluster
+        uses: azure/k8s-deploy@v1
+        with:
+          namespace: default
+          manifests: |
+            kubernetes/deployment.yaml
+            kubernetes/ingress.yaml
+            kubernetes/service.yaml
+          images: |
+            ghcr.io/username/package:${{ github.sha }}
 ...
