@@ -52,7 +52,7 @@ jobs:
         with:
           push: true
           tags: |
-            ghcr.io/Tassaing/package:latest
-            ghcr.io/Tassaing/package:${{ github.sha }}
+            ghcr.io/tassaing/package:latest
+            ghcr.io/tassaing/package:${{ github.sha }}
             
 ...
