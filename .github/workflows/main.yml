@@ -59,4 +59,16 @@ jobs:
           build-args: |
               "NPM_TOKEN=${{ secrets.TOKEN }}"
           push: true
+
+  deploy:
+    name: Deploy
+    needs: build 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set the Kubernetes context
+        uses: azure/k8s-set-context@v2
+        with:
+          method: service-account
+          k8s-url: https://tassk3s.duckdns.org:8080
+          k8s-secret: ${{ secrets.KUBERNETES_SECRET }}
 ...
