@@ -52,7 +52,7 @@ jobs:
         with:
           push: true
           tags: |
-            ghcr.io/username/package:latest
-            ghcr.io/username/package:${{ github.sha }}
+            ghcr.io/Tassaing/package:latest
+            ghcr.io/Tassaing/package:${{ github.sha }}
             
 ...
