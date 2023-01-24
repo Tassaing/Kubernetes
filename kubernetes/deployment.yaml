@@ -4,6 +4,6 @@ spec:
     spec:
       containers:
         - name: container-name
-          image: ghcr.io/username/package:latest
+          image: ghcr.io/tassaing/my-image-name:t10
       imagePullSecrets:
         - name: github-actions-secret
