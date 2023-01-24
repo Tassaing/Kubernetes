@@ -27,7 +27,7 @@ jobs:
         uses: ramsey/composer-install@v2
 
       - name: Execute database migrations
-        run: bin/console doctrine:migrations:migrate --no-interaction
+        run: bin/console doctrine:migrations:diff --no-interaction
 
       - name: Run tests
         run: make check
