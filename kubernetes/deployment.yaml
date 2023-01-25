@@ -7,7 +7,7 @@ metadata:
  namespace: default
 spec:
  nodeSelector:
-  name: centos8bis
+  name: centos8
  selector:
   matchLabels:
    app: nginx_1
