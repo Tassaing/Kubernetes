@@ -78,11 +78,11 @@ jobs:
       - name: Deploy to the Kubernetes cluster
         uses: jtalk/k8s-deploy@v2
         with:
-         namespace: 'myapp'
-         manifests: |
-          deployment.yaml
-         images: 'tassaing/my-image-name:${{ event.run_id }}'
-         imagepullsecrets: |
-          github-actions-secret
-         kubectl-version: 'latest'
+          namespace: 'myapp'
+          manifests: |
+            deployment.yaml
+          images: 'tassaing/my-image-name:${{ event.run_id }}'
+          imagepullsecrets: |
+            github-actions-secret
+          kubectl-version: 'latest'
 ...
