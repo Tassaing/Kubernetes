@@ -80,7 +80,7 @@ jobs:
         with:
           namespace: default
           manifests: |
-            deployment.yaml
+            kubernetes/deployment.yaml
           images: nginx
           imagepullsecrets: |
             github-actions-secret
