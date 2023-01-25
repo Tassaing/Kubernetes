@@ -81,7 +81,7 @@ jobs:
           namespace: default
           manifests: |
             deployment.yaml
-          images: tassaing/my-image-name:${{ event.run_id }}
+          images: nginx
           imagepullsecrets: |
             github-actions-secret
           kubectl-version: latest
