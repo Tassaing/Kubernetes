@@ -76,11 +76,13 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Deploy to the Kubernetes cluster
-        uses: azure/k8s-deploy@v1
+        uses: jtalk/k8s-deploy@v2
         with:
-          namespace: default
+         namespace: 'myapp'
           manifests: |
-            kubernetes/deployment.yaml
-         # images: |
-         #   ghcr.io/username/package:${{ github.sha }}
+               deployment.yaml
+          images: 'tassaing/my-image-name:${{ event.run_id }}'
+          imagepullsecrets: |
+             github-actions-secret
+          kubectl-version: 'latest'
 ...
