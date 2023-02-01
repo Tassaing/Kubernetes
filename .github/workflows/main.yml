@@ -68,17 +68,11 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
-      - name: Deploy to the Kubernetes cluster
-        uses: jtalk/k8s-deploy@v2
+    
+      - name: Kubernetes Deployment
+        uses: TanmoySG/k-deploy-action@v0.2.2-alpha
         with:
-          method: service-account
-          k8s-url: http://tassk3s.duckdns.org:8031
-          k8s-secret: ${{ secrets.KUBERNETES_SECRET }}
-          namespace: default
-          manifests: |
-            kubernetes/deployment.yaml
-          images: nginx
-          imagepullsecrets: |
-            github-actions-secret
-          kubectl-version: latest
+          kubeconfig: ${{ secrets.KUBECONFIG }}
+          namespace: 'default'
+          manifest: kubernetes/deployment.yaml
 ...
