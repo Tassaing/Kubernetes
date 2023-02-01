@@ -73,5 +73,5 @@ jobs:
         uses: danielr1996/kubectl-action@1.0.0
         with:
          kubeconfig: ${{ secrets.KUBE_CONFIG }}
-         args: apply -f kubernetes/deployment.yaml
+         args: get pods
 ...
