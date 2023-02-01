@@ -62,7 +62,7 @@ jobs:
 
   deploy:
     name: Deploy
-    needs: build 
+    #needs: build 
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
@@ -70,9 +70,9 @@ jobs:
 
     
       - name: Kubernetes Deployment
-        uses: TanmoySG/k-deploy-action@v0.2.2-alpha
+        uses: danielr1996/kubectl-action@1.0.0
+        name: Deploy
         with:
-          kubeconfig: ${{ secrets.KUBECONFIG }}
-          namespace: 'default'
-          manifest: kubernetes/deployment.yaml
+         kubeconfig: ${{ secrets.KUBE_CONFIG }}
+        args: apply -f kubernetes/deployment.yaml
 ...
