@@ -71,7 +71,6 @@ jobs:
     
       - name: Kubernetes Deployment
         uses: danielr1996/kubectl-action@1.0.0
-        name: Deploy
         with:
          kubeconfig: ${{ secrets.KUBE_CONFIG }}
          args: apply -f kubernetes/deployment.yaml
