@@ -63,7 +63,7 @@ jobs:
   deploy:
     name: Deploy
     #needs: build 
-    runs-on: self-hosted
+    runs-on: Runner1
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3
