@@ -62,7 +62,7 @@ jobs:
 
   deploy:
     name: Deploy
-    #needs: build 
+    needs: build 
     runs-on: Runner1
     steps:
       - name: Checkout source code
