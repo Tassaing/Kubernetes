@@ -5,7 +5,7 @@ on: push
 jobs:
   test:
     name: Test
-    runs-on: runner1
+    runs-on: runner
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3
@@ -27,7 +27,7 @@ jobs:
   build:
     name: Build
     needs: test
-    runs-on: runner1
+    runs-on: runner
     steps:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
@@ -55,7 +55,7 @@ jobs:
   deploy:
     name: Deploy
     needs: build 
-    runs-on: runner1
+    runs-on: runner
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3
