@@ -25,7 +25,7 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          tags: ghcr.io/tassaing/my-image-name:t10
+          tags: ghcr.io/tassaing/flask-test-app:latest
           build-args: |
               "NPM_TOKEN=${{ secrets.TOKEN }}"
           push: true
@@ -44,5 +44,5 @@ jobs:
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
         with:
-          args: delete -f kubernetes/deployment.yaml
+          args: apply -f kubernetes/deployment.yaml
 ...

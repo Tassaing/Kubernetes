@@ -1,7 +1,17 @@
-# syntax=docker/dockerfile:1
-FROM node:18-alpine
-WORKDIR /app
-COPY . .
-RUN yarn install --production
-CMD ["node", "src/index.js"]
-EXPOSE 3000
+# We need python 3.8
+FROM python:3.8
+
+# make the working directory in the container
+RUN mkdir /app
+
+# specify where to install the app
+WORKDIR /app/
+
+# add all files to the working directory
+ADD . /app/
+
+# Install the dependencies in the requirements file.
+RUN pip install -r requirements.txt
+
+# Run the app
+CMD ["python", "/app/app.py"]
