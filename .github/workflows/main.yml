@@ -5,23 +5,15 @@ on: push
 jobs:
   test:
     name: Test
-    runs-on: ubuntu-latest
-    services:
-      database:
-        image: mysql:8.0
-        env:
-          MYSQL_ROOT_PASSWORD: password
-          MYSQL_DATABASE: database
-        ports:
-          - 3306:3306
+    runs-on: Runner1
     steps:
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.1'
-
       - name: Checkout source code
         uses: actions/checkout@v3
+
+      - name: Install Php
+        uses: "shivammathur/setup-php@v2"
+         with:
+          php-version: "latest"
 
       - name: Install dependencies with Composer
         uses: ramsey/composer-install@v2
@@ -34,7 +26,7 @@ jobs:
 
   build:
     name: Build
-    #needs: test
+    needs: test
     runs-on: Runner1
     steps:
       - name: Set up Docker Buildx
@@ -74,5 +66,5 @@ jobs:
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
         with:
-          args: delete -f kubernetes/deployment.yaml
+          args: apply -f kubernetes/deployment.yaml
 ...
