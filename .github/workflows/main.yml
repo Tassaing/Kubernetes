@@ -9,12 +9,7 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3
-
-      - name: Install Php
-        uses: "shivammathur/setup-php@v2"
-        with:
-         php-version: "latest"
-
+        
       - name: Install dependencies with Composer
         uses: ramsey/composer-install@v2
 
