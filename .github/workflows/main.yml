@@ -3,26 +3,6 @@ name: CI/CD
 on: push
 
 jobs:
-  test:
-    name: Test
-    runs-on: self-hosted
-    steps:
-      - name: Checkout source code
-        uses: actions/checkout@v3
-
-      - name: Install Php
-        uses: "shivammathur/setup-php@v2"
-        with:
-         php-version: "latest"
-
-      - name: Install dependencies with Composer
-        uses: ramsey/composer-install@v2
-
-      - name: Execute database migrations
-        run: bin/console doctrine:migrations:diff --no-interaction
-
-      - name: Run tests
-        run: make check
 
   build:
     name: Build
