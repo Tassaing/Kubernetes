@@ -33,7 +33,7 @@ jobs:
 
   deploy:
     name: Deploy
-    needs: build 
+    needs: Build 
     runs-on: self-hosted
     steps:
       - name: Checkout source code
