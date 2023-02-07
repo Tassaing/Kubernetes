@@ -44,5 +44,5 @@ jobs:
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
         with:
-          args: apply -f kubernetes/deployment.yaml
+          args: delete -f kubernetes/deployment.yaml
 ...
