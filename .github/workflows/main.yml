@@ -43,7 +43,7 @@ jobs:
       - name: Set Kubernetes Context
         uses: actions-hub/kubectl@master
         env:
-          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG_LOCAL }}
         with:
           args: apply -f kubernetes/deployment.yaml
 ...
