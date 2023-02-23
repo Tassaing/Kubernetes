@@ -11,7 +11,8 @@ jobs:
         uses: docker/setup-buildx-action@v1
 
       - name: Build the Docker image # push The image to the docker hub
-        run: docker build . --file Dockerfile --tag 18-alpine:latest
+        run: docker build . --file Dockerfile --tag localhost:5000/myadmin/18-alpine:latest
+
       - name: Docker Push
         run: docker image push localhost:5000/myadmin/18-alpine:latest
 
