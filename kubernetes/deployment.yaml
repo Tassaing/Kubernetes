@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: flask-test-app
-        image: flask-test-app:latest
+        image: localhost:5000/myadmin/flask-test-app:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
