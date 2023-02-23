@@ -25,7 +25,7 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          tags: ghcr.io/tassaing/flask-test-app:latest
+          tags: localhost:5000/flask-test-app:latest
           build-args: |
               "NPM_TOKEN=${{ secrets.TOKEN }}"
           push: true
