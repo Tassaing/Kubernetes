@@ -5,7 +5,7 @@ metadata:
   name: flask-test-service
 spec:
   selector:
-    app: flask-test-app
+    app: flask-test-app1
   ports:
   - protocol: "TCP"
     port: 6000
@@ -17,20 +17,20 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flask-test-app
+  name: flask-test-app1
 spec:
   selector:
     matchLabels:
-      app: flask-test-app
+      app: flask-test-app1
   replicas: 5
   template:
     metadata:
       labels:
-        app: flask-test-app
+        app: flask-test-app1
     spec:
       containers:
-      - name: flask-test-app
-        image: runner1.home.local:5000/myadmin/flask-test-app:latest
+      - name: flask-test-app1
+        image: runner1.home.local:5000/myadmin/flask-test-app1:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
