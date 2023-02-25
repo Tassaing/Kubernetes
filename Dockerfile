@@ -18,3 +18,4 @@ RUN pip3 install -r requirements.txt
 COPY ./hello.py hello.py
 
 CMD [ "python3","hello.py" ]
+
