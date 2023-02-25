@@ -11,10 +11,10 @@ jobs:
         uses: docker/setup-buildx-action@v1
 
       - name: Build the Docker image # push The image to the docker hub
-        run: docker build . --file Dockerfile --tag localhost:5000/myadmin/flask-test-app:latest
+        run: docker build . --file Dockerfile --tag localhost:5000/myadmin/flask-test-app:2
 
       - name: Docker Push
-        run: docker image push localhost:5000/myadmin/flask-test-app:latest
+        run: docker image push localhost:5000/myadmin/flask-test-app:2
 
   deploy:
     name: Deploy
