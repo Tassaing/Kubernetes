@@ -1,5 +1,2 @@
-FROM node:slim
-ADD ./app /app
-WORKDIR /app
-RUN npm install
-CMD npm start
+FROM nginx
+COPY ./index.html /usr/share/nginx/html/index.html
