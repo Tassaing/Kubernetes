@@ -4,7 +4,6 @@ on: push
 jobs:
 
   clear-cache:
-      name: Clear
       runs-on: self-hosted
       steps:
         - name: Clear cache
@@ -28,7 +27,6 @@ jobs:
 
   build:
     name: Build
-    needs: Clear
     runs-on: self-hosted
     steps:
       - name: Set up Docker Buildx
