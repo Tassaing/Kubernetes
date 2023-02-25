@@ -17,20 +17,20 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-app1
+  name: test-app2
 spec:
   selector:
     matchLabels:
-      app: test-app1
+      app: test-app2
   replicas: 5
   template:
     metadata:
       labels:
-        app: test-app1
+        app: test-app2
     spec:
       containers:
-      - name: test-app1
-        image: runner1.home.local:5000/myadmin/test-app1:latest
+      - name: test-app2
+        image: runner1.home.local:5000/myadmin/test-app2:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
