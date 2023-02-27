@@ -38,11 +38,12 @@ jobs:
         uses: docker/setup-buildx-action@v1
 
       - name: Build the Docker image # push The image to the docker hub
-        run: docker build . --file Dockerfile --tag localhost:5000/test-app2:1
+        run: |
+         docker rmi $(docker images --format '{{.Repository}}:{{.Tag}}' | grep 'localhost:5000/test-app2')
+         docker build . --file Dockerfile --tag localhost:5000/test-app2:1
 
       - name: Docker Push
         run: |
-         docker rmi localhost:5000/test-app2:1
          docker image push localhost:5000/test-app2:1
         
 
