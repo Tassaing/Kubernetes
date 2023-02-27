@@ -42,8 +42,8 @@ jobs:
 
       - name: Docker Push
         run: |
-        docker rmi localhost:5000/myadmin/test-app2:latest
-        docker image push localhost:5000/myadmin/test-app2:latest
+         docker rmi localhost:5000/myadmin/test-app2:latest
+         docker image push localhost:5000/myadmin/test-app2:latest
         
 
   deploy:
