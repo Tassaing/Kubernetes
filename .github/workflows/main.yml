@@ -39,7 +39,7 @@ jobs:
 
       - name: Build the Docker image # push The image to the docker hub
         run: |
-         docker rmi $(docker images --format '{{.Repository}}:{{.Tag}}' | grep 'localhost:5000/test-app2')
+         docker rmi --force $(docker images --format '{{.Repository}}:{{.Tag}}' | grep 'localhost:5000/test-app2')
          docker build . --file Dockerfile --tag localhost:5000/test-app2:1
 
       - name: Docker Push
