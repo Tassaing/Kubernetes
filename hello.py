@@ -18,7 +18,7 @@ print (getNetworkIp())
 
 @app.route("/")
 def main():
-    return "Hello!", getNetworkIp()
+    return "Hello Guys!", getNetworkIp()
 
 @app.route("/healthz")
 def health():
