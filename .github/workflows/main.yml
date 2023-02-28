@@ -41,7 +41,8 @@ jobs:
         run: docker build . --file Dockerfile --tag localhost:5000/myadmin/test-app2:latest
 
       - name: Docker Push
-        run: docker image push localhost:5000/myadmin/test-app2:latest
+        run: | 
+         docker image push localhost:5000/myadmin/test-app2:latest
         
 
   deploy:
