@@ -14,11 +14,13 @@ def getNetworkIp():
     s.connect(('<broadcast>', 0))
     return s.getsockname()[0]
 
+localip = print (getNetworkIp())
 
 
 @app.route("/")
 def main():
-    return "Hello Guys! v4", print (getNetworkIp())
+    
+    return localip
 
 @app.route("/healthz")
 def health():
