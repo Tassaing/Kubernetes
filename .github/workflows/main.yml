@@ -38,11 +38,11 @@ jobs:
         uses: docker/setup-buildx-action@v1
 
       - name: Build the Docker image # push The image to the docker hub
-        run: docker build . --file Dockerfile --tag localhost:5000/myadmin/test-app2:latest
+        run: docker build . --file Dockerfile --tag localhost:5000/myadmin/test-app2:v2
 
       - name: Docker Push
         run: | 
-         docker image push localhost:5000/myadmin/test-app2:latest
+         docker image push localhost:5000/myadmin/test-app2:v2
         
 
   deploy:

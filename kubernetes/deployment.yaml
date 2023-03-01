@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: test-app2
-        image: runner1.home.local:5000/myadmin/test-app2:latest
+        image: runner1.home.local:5000/myadmin/test-app2:v2
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
