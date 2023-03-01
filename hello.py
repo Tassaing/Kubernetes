@@ -14,7 +14,7 @@ def getNetworkIp():
     s.connect(('<broadcast>', 0))
     return s.getsockname()[0]
 
-localip = print (getNetworkIp())
+localip = getNetworkIp()
 
 
 @app.route("/")
