@@ -8,14 +8,17 @@ uptime = f"up since {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
 version="0.0.1"
 
 import socket
+def getNetworkIp():
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+    s.connect(('<broadcast>', 0))
+    return s.getsockname()[0]
+
 
 
 @app.route("/")
 def main():
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
-    s.connect(('<broadcast>', 0))
-    return "Hello Guys! V2", getNetworkIp()
+    return "Hello Guys! v4", print (getNetworkIp())
 
 @app.route("/healthz")
 def health():
