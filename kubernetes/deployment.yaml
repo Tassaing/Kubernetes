@@ -8,7 +8,7 @@ spec:
     app: test-app2
   ports:
   - protocol: "TCP"
-    port: 6000
+    port: 6001
     targetPort: 8080
   type: LoadBalancer
 
